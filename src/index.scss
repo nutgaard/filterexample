@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI Semilight", sans-serif;
+  background-color: #efefef;
+}
+
+$headers: (h1, h2, h3, h4, h5, h6);
+
+@each $header in $headers {
+  #{$header} {
+    margin: 0;
+  }
+}
+
+
+$sizes: (
+        xxs: 0.25rem,
+        xs: 0.5rem,
+        s: 1rem,
+        m: 2rem
+);
+@each $name, $size in $sizes {
+  .blokk-#{$name} {
+    margin-bottom: $size;
+  }
+}
+.application {
+  padding: 2rem;
+}
