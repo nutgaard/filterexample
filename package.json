@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node fuse.js",
-    "build": "node fuse.js build"
+    "build": "node fuse.js build",
+    "push": "yarn run build && gh-pages -d build"
   },
   "dependencies": {
     "babel-core": "^6.24.0",
@@ -15,6 +16,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "fuse-box": "^1.3.128",
+    "gh-pages": "^0.12.0",
     "node-sass": "^4.5.1",
     "react": "^15.4.2",
     "react-collapse": "^2.3.3",
