@@ -14,12 +14,16 @@ function write(scope, content) {
 export default function reducerHOC(scope, reducer) {
     return (state, action) => {
         let nState = state;
-
-        if (!nState) {
-            nState = read(scope);
+        if (state === undefined) {
+           nState = read(scope);
         }
-        nState = reducer(nState, action);
-        write(scope, nState);
-        return nState;
+        
+        const rState = reducer(nState, action);
+        
+        if (rState !== nState) {
+            write(scope, rState);
+        }
+     
+        return rState;
     };
 }
